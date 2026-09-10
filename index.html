@@ -1,42 +1,255 @@
+Aquí tienes una versión mucho más moderna, dinámica y profesional. Esta estructura de Landing Page incluye animaciones de entrada, efectos al pasar el cursor (hover), un menú de navegación flotante, sombras suaves y un diseño en formato de "tarjetas" (cards) que le da un aspecto muy tecnológico y pulido.
+
+He utilizado la fuente Poppins de Google Fonts para darle un toque más estético. Puedes copiar y pegar este código completo en tu index.html:
+
+HTML
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto SMAAP - IRTRA Petapa</title>
+    <title>SMAAP | Sistema Automatizado de Alerta Perimetral</title>
+    <!-- Importar fuente de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
     <style>
-        /* Estilos básicos para alejarlo del formato bitácora y darle un toque de Landing Page */
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; color: #333; }
-        header { background-color: #0056b3; color: white; padding: 3rem 1rem; text-align: center; }
-        section { padding: 3rem 2rem; max-width: 900px; margin: auto; text-align: center; border-bottom: 1px solid #eee; }
-        .btn { display: inline-block; padding: 10px 20px; margin: 10px; background-color: #28a745; color: white; text-decoration: none; border-radius: 5px; }
-        .btn:hover { background-color: #218838; }
-        img { max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        audio { width: 100%; margin-top: 15px; }
+        /* Variables de colores para mantener armonía */
+        :root {
+            --primary-color: #0A192F;
+            --secondary-color: #64FFDA;
+            --text-dark: #333333;
+            --text-light: #8892B0;
+            --bg-color: #F4F7F6;
+            --card-bg: #FFFFFF;
+        }
+
+        /* Configuración base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth; /* Desplazamiento suave entre secciones */
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Barra de navegación flotante */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 25, 47, 0.95);
+            padding: 15px 0;
+            text-align: center;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Encabezado principal (Hero Section) */
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #112240 100%);
+            color: white;
+            padding: 150px 20px 100px;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); /* Borde inferior inclinado */
+        }
+
+        header h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            color: var(--secondary-color);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #CCD6F6;
+            max-width: 600px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        /* Contenedor de las secciones */
+        main {
+            max-width: 1000px;
+            margin: -50px auto 50px auto; /* Sube un poco para superponerse al header */
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Diseño de Tarjetas para cada sección */
+        section {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards 0.6s;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        section h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        section h2::after {
+            content: '';
+            width: 50%;
+            height: 3px;
+            background: var(--secondary-color);
+            position: absolute;
+            bottom: -5px;
+            left: 25%;
+            border-radius: 2px;
+        }
+
+        section p {
+            color: var(--text-light);
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+
+        /* Estilo para imágenes */
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Estilos de reproductor de audio */
+        audio {
+            width: 100%;
+            max-width: 500px;
+            outline: none;
+            border-radius: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        /* Estilos de botones */
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 30px;
+            border: 2px solid var(--primary-color);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(10, 25, 47, 0.2);
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            border-color: var(--secondary-color);
+            box-shadow: 0 6px 20px rgba(100, 255, 218, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* Animaciones Keyframes */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Pie de página */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
 
+    <!-- Menú de navegación flotante -->
+    <nav>
+        <a href="#infografia">Infografía</a>
+        <a href="#podcast">Podcast</a>
+        <a href="#documentacion">Documentación</a>
+    </nav>
+
     <!-- Encabezado de la Landing Page -->
     <header>
         <h1>SMAAP</h1>
-        <p>Sistema Automatizado de Alerta Perimetral para IRTRA Petapa</p>
+        <p>Sistema Automatizado de Alerta Perimetral | Solución tecnológica para IRTRA Petapa</p>
     </header>
 
     <main>
         <!-- Sección 1: Infografía -->
         <section id="infografia">
-            <h2>Visión General del Proyecto</h2>
-            <p>Conoce nuestro equipo y el impacto en los ODS a través de nuestra infografía ejecutiva.</p>
+            <h2>Infografía Ejecutiva</h2>
+            <p>Conoce a nuestro equipo, los materiales del circuito y nuestro impacto en los Objetivos de Desarrollo Sostenible (ODS).</p>
             
             <!-- AQUÍ AÑADES EL NOMBRE DE LA IMAGEN O PDF DE TU INFOGRAFÍA -->
-            <img src="Recursos/NOMBRE_DE_TU_INFOGRAFIA.png" alt="Infografía del Proyecto">
+            <img src="Recursos/NOMBRE_DE_TU_INFOGRAFIA.png" alt="Infografía del Proyecto SMAAP">
         </section>
 
         <!-- Sección 2: Podcast -->
         <section id="podcast">
             <h2>Podcast Informativo</h2>
-            <p>Escucha la explicación detallada sobre la lógica y funcionamiento de nuestro circuito en Tinkercad.</p>
+            <p>Escucha el análisis detallado sobre la lógica del microcontrolador y el impacto operativo de nuestra solución.</p>
             
             <audio controls>
                 <!-- AQUÍ AÑADES EL NOMBRE DE TU ARCHIVO DE AUDIO -->
@@ -48,17 +261,21 @@
         <!-- Sección 3: Documentación Técnica -->
         <section id="documentacion">
             <h2>Documentación Formal</h2>
-            <p>Accede al informe de investigación completo con el planteamiento del problema y la resolución técnica.</p>
+            <p>Accede al informe técnico completo. Incluye el planteamiento del problema, esquemas y la resolución basada en Arduino.</p>
             
-            <div>
+            <div class="btn-container">
                 <!-- AQUÍ AÑADES EL NOMBRE DE TU PDF PARA QUE SE ABRA EN EL NAVEGADOR -->
                 <a href="Recursos/NOMBRE_DE_TU_PDF.pdf" target="_blank" class="btn">Abrir Informe (PDF)</a>
                 
                 <!-- AQUÍ AÑADES EL NOMBRE DE TU WORD PARA QUE SE DESCARGUE AUTOMÁTICAMENTE -->
-                <a href="Recursos/NOMBRE_DE_TU_WORD.docx" download class="btn">Descargar Informe (Word)</a>
+                <a href="Recursos/NOMBRE_DE_TU_WORD.docx" download class="btn">Descargar Original (Word)</a>
             </div>
         </section>
     </main>
+
+    <footer>
+        <p>&copy; 2026 - Proyecto de Tecnología Aplicada. Todos los derechos reservados.</p>
+    </footer>
 
 </body>
 </html>
