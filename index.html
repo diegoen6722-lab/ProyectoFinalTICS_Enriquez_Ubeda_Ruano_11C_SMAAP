@@ -1,181 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bitácora Diego Enriquez</title>
-    <link rel="icon" type="image/png" href="Recursos/img/LogoFin1.png">
+    <title>Proyecto SMAAP - IRTRA Petapa</title>
     <style>
-        /*CSS, este si es un lenguaje de programación, Diseñar en cascada*/
-        html, body{
-            height: 100%;
-            margin: 0;
-            font-family: arial, sans-serif;
-        }
-        body{
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-        }
-        header{
-            padding: 20px;
-            background-color:rgba(77, 151, 215, 0.847);
-        }
-        main {
-            width: 100%; /* Asegura que el contenedor principal ocupe todo el ancho */
-            padding: 20px;
-            box-sizing: border-box; /* Asegura que el padding no afecte el tamaño */
-        }
-        footer{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 50px;
-            border-top: 10px solid rgb(142, 35, 35);
-            background-color: rgb(129, 103, 103);
-        }
-        h1 {
-            color: rgb(255, 255, 255);
-            text-shadow: 0 0 5px #a020f0, 0 0 10px #a020f0, 0 0 20px #a020f0, 0 0 40px #9400d3, 0 0 80px #9400d3;
-        }
-        .logo {
-            transition: transform 0.3s ease;
-        }
-
-        .logo:hover {
-            transform: scale(1.2);
-            filter: brightness(1.2);
-        }
-        .semana {
-            width: 60%;    
-            max-width: 100%;
-            background-color: white;
-            margin: 20px auto;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .semana:hover {
-            transform: translateY(-5px); 
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-        }
-        @media(max-width:600px){
-            footer{
-                flex-direction: column;
-                gap: 15px;
-                padding: 20px;
-            }
-        }
-        iframe {
-            border: none;
-            display: block;
-            margin-top: 20px;
-            border: 2px solid var(--borde-color);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px black;
-        }
-        
-        /* Ajuste visual para el video */
-        video {
-            display: block;
-            margin-top: 20px;
-            border-radius: 9px;
-            box-shadow: 0 4px 15px black;
-            outline: none;
-        }
+        /* Estilos básicos para alejarlo del formato bitácora y darle un toque de Landing Page */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; color: #333; }
+        header { background-color: #0056b3; color: white; padding: 3rem 1rem; text-align: center; }
+        section { padding: 3rem 2rem; max-width: 900px; margin: auto; text-align: center; border-bottom: 1px solid #eee; }
+        .btn { display: inline-block; padding: 10px 20px; margin: 10px; background-color: #28a745; color: white; text-decoration: none; border-radius: 5px; }
+        .btn:hover { background-color: #218838; }
+        img { max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        audio { width: 100%; margin-top: 15px; }
     </style>
 </head>
 <body>
+
+    <!-- Encabezado de la Landing Page -->
     <header>
-        <h1>Bitácora Segunda y Tercera Unidad</h1>
+        <h1>SMAAP</h1>
+        <p>Sistema Automatizado de Alerta Perimetral para IRTRA Petapa</p>
     </header>
+
     <main>
-        <!-- SEMANA 1 -->
-        <div class="semana">
-            <h3>Semana 1</h3>
-            <p>Contenido de la página WEB</p>
-            <iframe src="Recursos/Introducción Arduino (1).pdf" width="100%" height="500px" target="_blank"></iframe>
-        </div>
+        <!-- Sección 1: Infografía -->
+        <section id="infografia">
+            <h2>Visión General del Proyecto</h2>
+            <p>Conoce nuestro equipo y el impacto en los ODS a través de nuestra infografía ejecutiva.</p>
+            
+            <!-- AQUÍ AÑADES EL NOMBRE DE LA IMAGEN O PDF DE TU INFOGRAFÍA -->
+            <img src="Recursos/NOMBRE_DE_TU_INFOGRAFIA.png" alt="Infografía del Proyecto">
+        </section>
 
-        <!-- SEMANA 2 (Modificada) -->
-        <div class="semana">
-            <h3>Semana 2</h3>
-            <p>Cirtuito 2</p>
+        <!-- Sección 2: Podcast -->
+        <section id="podcast">
+            <h2>Podcast Informativo</h2>
+            <p>Escucha la explicación detallada sobre la lógica y funcionamiento de nuestro circuito en Tinkercad.</p>
             
-            <!-- Etiqueta de video añadida aquí -->
-            <video width="100%" controls>
-                <source src="Recursos/vid/Circuito2.mp4" type="video/mp4">
-            </video>
-        </div>
+            <audio controls>
+                <!-- AQUÍ AÑADES EL NOMBRE DE TU ARCHIVO DE AUDIO -->
+                <source src="Recursos/NOMBRE_DE_TU_AUDIO.mp3" type="audio/mpeg">
+                Tu navegador no soporta el reproductor de audio.
+            </audio>
+        </section>
 
-                <div class="semana">
-            <h3>Semana 3</h3>
-            <p>Circuito 3</p>
+        <!-- Sección 3: Documentación Técnica -->
+        <section id="documentacion">
+            <h2>Documentación Formal</h2>
+            <p>Accede al informe de investigación completo con el planteamiento del problema y la resolución técnica.</p>
             
-            <!-- Etiqueta de video añadida aquí -->
-            <video width="100%" controls>
-                <source src="Recursos/vid/Circuito3.mp4" type="video/mp4">
-            </video>
-        </div>
-
-                <div class="semana">
-            <h3>Semana 4</h3>
-            <p>Cirtcuito 4</p>
-            
-            <!-- Etiqueta de video añadida aquí -->
-            <video width="100%" controls>
-                <source src="Recursos/vid/Circuito4.mp4" type="video/mp4">
-            </video>
-        </div>
-                <div class="semana">
-                    <h3>Semana 5</h3>
-            <p>Cirtcuito 5</p>
-            
-            <!-- Etiqueta de video añadida aquí -->
-            <video width="100%" controls>
-                <source src="Recursos/vid/Circuito5semaforo.mp4" type="video/mp4">
-            </video>
-        </div>
-                <div class="semana">
-                    <h3>Semana 6</h3>
-            <p>Cirtcuito 6</p>
-            
-            <!-- Etiqueta de video añadida aquí -->
-            <video width="100%" controls>
-                <source src="Recursos/vid/Circuito6.mp4" type="video/mp4">
-            </video>
-        </div>
-
-        <div class="semana">
-                    <h3>Semana 7</h3>
-            <p>Cirtcuito 7</p>
-            
-            <!-- Etiqueta de video añadida aquí -->
-            <video width="100%" controls>
-                <source src="Recursos/vid/Circuito7.mp4" type="video/mp4">
-            </video>
-        </div>
-        
-        <div class="semana">
-                    <h3>SuficienciaU3</h3>
-            <p>Circuito Suficiencia</p>
-            
-            <!-- Etiqueta de video añadida aquí -->
-            <video width="100%" controls>
-                <source src="Recursos/vid/SuficienciaU4.mp4" type="video/mp4">
-            </video>
-        </div>
-
-        <!-- Corregido: Se movió este h3 que andaba suelto abajo para mantener el orden, o puedes borrarlo si no lo usas -->
-        <h3 style="margin-top: 40px;">Contenido de la página WEB</h3>
+            <div>
+                <!-- AQUÍ AÑADES EL NOMBRE DE TU PDF PARA QUE SE ABRA EN EL NAVEGADOR -->
+                <a href="Recursos/NOMBRE_DE_TU_PDF.pdf" target="_blank" class="btn">Abrir Informe (PDF)</a>
+                
+                <!-- AQUÍ AÑADES EL NOMBRE DE TU WORD PARA QUE SE DESCARGUE AUTOMÁTICAMENTE -->
+                <a href="Recursos/NOMBRE_DE_TU_WORD.docx" download class="btn">Descargar Informe (Word)</a>
+            </div>
+        </section>
     </main>
-    
-    <footer>
-        <span>@Diego.fe2</span>
-        <img class="logo" src="https://www.capouilliez.edu.gt/assets/img/logo.png" height="50px" width="215px">
-    </footer>
+
 </body>
 </html>
